@@ -11,7 +11,7 @@ public class Compra {
 	private int id ;
 	private Producto producto ;
 	private int cantidad ;
-	private double total ;
+
 	
 	
 	public Compra() {
@@ -25,16 +25,16 @@ public class Compra {
 	 * @param cantidad
 	 * @param total
 	 */
-	public Compra(int id, Producto producto, int cantidad, double total) {
+	public Compra(int id, Producto producto, int cantidad) {
 		super();
 		this.id = id;
 		this.producto = producto;
 		this.cantidad = cantidad;
-		this.total = total;
+
 	}
 	@Override
 	public String toString() {
-		return "Compra [id=" + id + ", producto=" + producto + ", cantidad=" + cantidad + ", total=" + total + "]";
+		return "Compra [id=" + id + ", producto=" + producto + ", cantidad=" + cantidad + "]";
 	}
 	/**
 	 * @return the id
@@ -75,14 +75,12 @@ public class Compra {
 	/**
 	 * @return the total
 	 */
-	public double getTotal() {
+	public double getTotal(double precio) {
+		double total = 0;
+		
+		total = this.cantidad * precio;
+		
 		return total;
-	}
-	/**
-	 * @param total the total to set
-	 */
-	public void setTotal(double total) {
-		this.total = total;
 	}
 	
 	
