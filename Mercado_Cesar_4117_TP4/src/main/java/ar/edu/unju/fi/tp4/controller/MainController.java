@@ -10,4 +10,14 @@ public class MainController {
 		return "home";
 	}
 	
+	@GetMapping("/prueba")
+	public String getPageCompra() {
+		return "compra";
+	}
+	
+	@GetMapping("/pruebaa")
+	public String getPageCompraa() {
+		return "listacompra";
+	}
+	
 }

@@ -10,9 +10,10 @@
 			    <h1 class="display-3 text-white" style="font-family: century gothic;">EMPRESA DE INFORMATICA</h1>
 			    <p class="lead text-white display-4">Sistema de gestión.</p>
 			    
-			     
+			  <div class="link">  
 			   
-			   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+			   <nav class="navbar navbar-expand-lg navbar-dark "style="background-color: black;"><!--c  -->
+			      
 				  <a class="navbar-brand" th:href="@{/home}">Inicio</a>
 				  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 				    <span class="navbar-toggler-icon"></span>
@@ -23,27 +24,38 @@
 				        <a class="nav-link" th:href="@{/producto/nuevo}">Nuevo Producto<span class="sr-only">(current)</span></a>
 				      </li>
 				      
-				      <li class="nav-item">
+				      <li class="nav-item active">
 				        <a class="nav-link" th:href="@{/producto/listado}">Lista de Productos</a>
 				      </li>
 				      
-				      <li class="nav-item">
+				      <li class="nav-item active">
 				        <a class="nav-link" th:href="@{/producto/ultimo}">Último Producto</a>
 				      </li>
 				      
-				      <li class="nav-item">
+				      <li class="nav-item active">
 				        <a class="nav-link" th:href="@{/cliente/nuevo}">Nuevo Cliente</a>
 				      </li>
 				      
-				      <li class="nav-item">
-				        <a class="nav-link" th:href="@{/cliente/listado}">Lista de Clientes</a>
+				      <li class="nav-item active" >
+				        <a class="nav-link " th:href="@{/cliente/listado}">Lista de Clientes</a>
+				      </li>
+				      
+				      <li class="nav-item active">
+				        <a class="nav-link"  th:href="@{/prueba}">Nueva Compra</a>
+				      </li>
+				      
+				      <li class="nav-item active">
+				        <a class="nav-link" th:href="@{/pruebaa}">Lista de  Compra</a>
+				        
 				      </li>
 				      
 				      
 				      
 				   </ul>
 				  </div>
+
 				</nav> 
+				</div> <!-- fin del id link -->
 			  </div>
 			</div>
 			
