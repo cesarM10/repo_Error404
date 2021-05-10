@@ -5,6 +5,7 @@
 	<title>Lista de Compras</title>
 	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
 	<link rel="stylesheet" th:href="@{/webjars/bootstrap/4.6.0-1/css/bootstrap.min.css}">
+	<link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 	<body>
 		<header th:replace="layout/header :: header"></header>
@@ -20,7 +21,7 @@
 						<div class="scrollme">
 						<table class="table table-responsive table-hover" style="text-align: center; background-color: gray; color: white;">
 							<thead style="background-color: black;"> 
-								<tr>
+								<tr id="miTablaEncabezado">
 									<th>ID Compra</th>
 									<th>Codigo Producto</th>
 									<th>Nombre Producto</th>
@@ -32,7 +33,7 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr th:each = "comp:${compras}">
+								<tr id="miTablaContenido" th:each = "comp:${compras}">
 									<td th:text="${comp.id}"></td>
 									<td th:text="${comp.producto.getCodigo}"></td>
 									<td th:text="${comp.producto.getNombre}"></td>

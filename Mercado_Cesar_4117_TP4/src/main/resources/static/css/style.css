@@ -5,3 +5,10 @@
     overflow-x: 920px;
 }
 
+#miTablaEncabezado th{
+	white-space: nowrap;
+}
+
+#miTablaContenido td{
+	white-space: nowrap;
+}
