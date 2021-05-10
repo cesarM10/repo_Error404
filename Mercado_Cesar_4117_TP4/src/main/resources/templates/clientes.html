@@ -23,7 +23,7 @@
 						<div class="scrollme">
 						<table class="table table-responsive table-hover" style="text-align: center; background-color: gray; color: white;">
 							<thead style="background-color: black;"> 
-								<tr>
+								<tr id="miTablaEncabezado">
 									<th>Tip Doc</th>
 									<th>Nro Doc</th>
 									<th>N y Ap </th>
@@ -40,7 +40,7 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr th:each = "cli:${cliente}">
+								<tr id="miTablaContenido" th:each = "cli:${cliente}">
 									<td th:text="${cli.tipoDocumento}"></td>
 									<td th:text="${cli.nroDocumento}"></td>
 									<td th:text="${cli.nombreApellido}"></td>
