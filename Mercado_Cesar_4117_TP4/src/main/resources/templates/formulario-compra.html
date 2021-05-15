@@ -14,32 +14,36 @@
 			<div class="row col-sm-12 col-md">
 				<div class="col-sm-12 col-md" style="border: solid;"> 
 					<h1 style="font-family: century gothic">Alta de una nueva compra</h1>
-					<form th:action="@{/compra/guardar}" method="post" >
+					<form th:action="@{/compra/guardar}" th:object="${compra}" method="post" >
 						<!-- Ingreso ID -->
 						<div class="form-group row">
 						    <label for="id" class="col-sm-2 col-form-label">ID compra</label>
 						    <div class="col-sm-10">
-						      <input type="number" class="form-control" id="id" name="id" >
+						      <input type="number" class="form-control" id="id" th:field="*{id}" >
 						    </div>
 						</div>
 						
 						<!-- Ingreso Producto -->
 						<div class="form-group ">
-							<label for="producto">Codigo Producto</label>
-						    <select class="form-control" id="codigo" name="codigo">
-						      <option th:each = "p:${productos}" selected><spam th:text="${p.codigo}"></spam></option>
+							<label for="producto" class="col-sm-2 col-form-label">Producto</label>
+						    <select id="producto" th:field="*{producto.codigo}">
+						      <option th:each = "p : ${productos}" selected
+						      th:value="${p.codigo}"
+						      th:text="${p.marca} + ' - ' + ${p.nombre} + ' - $' + ${p.precio}"
+						      th:selected="false"
+						      />
 						    </select>
 						</div>
 						<!-- Ingreso cantidad -->
 						<div class="form-group row">
 						    <label for="cantidad" class="col-sm-2 col-form-label">Cantidad</label>
 						    <div class="col-sm-10">
-						      <input type="number" class="form-control" id="cantidad" name="cantidad" >
+						      <input type="number" class="form-control" id="cantidad" th:field="*{cantidad}" >
 						    </div>
 						</div>
 												
 						<!-- boton -->
-						<button type="submit" class="btn btn-primary btn-sm">Enviar</button>
+						<button type="submit" class="btn btn-primary btn-sm">Guardar</button>
 					</form>
 				</div>			
 				

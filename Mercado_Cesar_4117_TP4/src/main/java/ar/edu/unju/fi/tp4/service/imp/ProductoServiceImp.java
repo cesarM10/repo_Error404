@@ -20,7 +20,7 @@ public class ProductoServiceImp implements IProductoService{
 	@Override
 	public void generarTablaProducto() {
 		productoList = TablaProducto.listaProductos;
-		productoList.add(new Producto(1,"Procesador Core i9",298999.99,"INTEL",100));
+		productoList.add(new Producto(1,"Procesador Core i9",298999.99,"INTEL",99));
 		productoList.add(new Producto(2,"Procesador Ryzen 5000",299999.99,"AMD",100));
 		productoList.add(new Producto(3,"Juego PC F1 2021",1899.99,"CodeMasters",100));
 		LOGGER.info("METHOD: generarTablaProducto - crea productos por defecto");
@@ -46,6 +46,18 @@ public class ProductoServiceImp implements IProductoService{
 	public List<Producto> obtenerProductos() {
 		LOGGER.info("METHOD: obtenerProductos - se recupero la lista de Objeto Producto");
 		return productoList;
+	}
+
+	@Override
+	public Producto getProductoPorCodigo(int codigo, int cantidad) {
+		Producto p = new Producto();
+		for (Producto prod : productoList) {
+			if(prod.getCodigo() == codigo) {
+				prod.setStock(prod.getStock()-cantidad);
+				p = prod;
+			}
+		}
+		return p;
 	}
 
 	
